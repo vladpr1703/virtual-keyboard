@@ -1,0 +1,47 @@
+body {
+    text-align: center;
+}
+
+textarea {
+    font-size: 20px;
+}
+
+.keyboard {
+    width: 650px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.letter {
+    width: 650px;
+}
+
+.letter_key, .number_key {
+    border-radius: 10px;
+    width: 50px;
+    height: 50px;
+    font: bold 20px 'Montserrat', sans-serif;
+    margin: 2px 0 2px;
+    background-color: #4595f7;
+    outline: none;
+}
+
+.letter_key:hover, .number_key:hover, .key:hover {
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    background-color: #429ef5;
+}
+
+.key {
+    height: 50px;
+    border-radius: 10px;
+    background-color: #4595f7;
+    outline: none;
+    font-size: 20px;
+}
+.backspace {
+    width: 100px;
+}
+
+.space {
+    width: 400px;
+}
