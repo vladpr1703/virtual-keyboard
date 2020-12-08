@@ -7,41 +7,53 @@ textarea {
 }
 
 .keyboard {
-    width: 650px;
+    width: 700px;
     margin: 0 auto;
     text-align: center;
 }
 
-.letter {
-    width: 650px;
+
+.language {
+    width: 100px;
+    height: 30px;
+    background-color: cornflowerblue;
+    outline: none;
+    transition: all 0.5s ease-in-out;
 }
 
-.letter_key, .number_key {
+.language:hover {
+    border-radius: 20px;
+}
+
+.key {
     border-radius: 10px;
     width: 50px;
     height: 50px;
     font: bold 20px 'Montserrat', sans-serif;
-    margin: 2px 0 2px;
+    margin: 2px 2px 2px;
     background-color: #4595f7;
     outline: none;
+    opacity: 0.9;
 }
 
-.letter_key:hover, .number_key:hover, .key:hover {
+.key:hover {
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
     background-color: #429ef5;
 }
 
-.key {
-    height: 50px;
-    border-radius: 10px;
-    background-color: #4595f7;
-    outline: none;
-    font-size: 20px;
+.hover {
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    background-color: #3a93e7;
 }
+
 .backspace {
     width: 100px;
 }
 
 .space {
     width: 400px;
+}
+
+.enter {
+    width: 70px;
 }
