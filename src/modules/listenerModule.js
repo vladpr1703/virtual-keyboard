@@ -3,7 +3,13 @@ export default function addListener() {
     const textArea = document.querySelector('#text');
     switch (event.target.className) {
       case 'key backspace':
-        textArea.value = textArea.value.slice(0, textArea.value.length - 1);
+        if (textArea.selectionEnd === textArea.textContent.length) {
+          textArea.value = textArea.value.slice(0, textArea.value.length - 1);
+        }
+        else {
+          textArea.value = textArea.value.slice(0, (textArea.selectionEnd - 1))  
+          + textArea.value.slice(textArea.selectionEnd, textArea.value.length);
+        }
         break;
       case 'key enter':
         textArea.value += '\n';
