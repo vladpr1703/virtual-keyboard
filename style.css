@@ -4,25 +4,30 @@ body {
 
 textarea {
     font-size: 20px;
+    color: black;
 }
 
 .keyboard {
-    width: 700px;
+    width: 740px;
     margin: 0 auto;
     text-align: center;
 }
 
-
 .language {
     width: 100px;
     height: 30px;
+    margin-top: 20px;
     background-color: cornflowerblue;
     outline: none;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.2s ease;
 }
 
 .language:hover {
     border-radius: 20px;
+}
+
+.language:focus {
+    outline: none;
 }
 
 .key {
@@ -48,12 +53,23 @@ textarea {
 
 .backspace {
     width: 100px;
+    
 }
 
 .space {
     width: 400px;
 }
 
-.enter {
+.enter, .capslock {
     width: 70px;
+    padding-bottom: 5px;
+}
+
+.caps_on {
+    text-shadow: 0px 0px 5px black;
+    color: white;
+}
+
+.key_caps {
+    text-transform: uppercase;
 }

@@ -22,12 +22,12 @@ engKey.forEach((key) => {
 lang.addEventListener('click', () => {
   let buttons = div.querySelectorAll('button');
   buttons = Array.prototype.slice.call(buttons);
-  if (buttons[11].textContent === 'q') {
+  if (buttons[12].textContent === 'q') {
     lang.innerHTML = '<img src="src/russia.png" alt="english"/>';
     buttons.forEach((value, i) => {
       value.textContent = rusKey[i];
       setClassList(value);
-    }); 
+    });
   }
   else {
     lang.innerHTML = '<img src="src/usa.png" alt="english"/>';
@@ -38,17 +38,37 @@ lang.addEventListener('click', () => {
   }
 });
 
+document.addEventListener('click', (event) => {
+  let buttons = div.querySelectorAll('button');
+  buttons = Array.prototype.slice.call(buttons);
+  if (event.target.className == 'key capslock caps_on') {
+    event.target.classList.add('caps_on');
+    buttons.forEach((el) => {
+      if (el.textContent.length < 2) {
+        el.classList.add('key_caps');
+      }
+    });
+  }
+  else if (event.target.className === 'key capslock') {
+    event.target.classList.remove('caps_on');
+    buttons.forEach((el) => {
+      if (el.textContent.length < 2) {
+        el.classList.remove('key_caps');
+      }
+    });
+  }
+});
 
 document.addEventListener('keydown', (event) => {
   let buttons = div.querySelectorAll('button');
   buttons = Array.prototype.slice.call(buttons);
   if (event.code) {
+    buttons.forEach(el => el.blur());
     const keyCodeID = keyCodes.findIndex((el) => el == event.code);
-    buttons[keyCodeID].click();
     const setStyle = function() {
       buttons[keyCodeID].classList.add('hover');
       setTimeout(() => buttons[keyCodeID].classList.remove('hover'), 200);
     };
     setStyle();
   }
-  });
+});

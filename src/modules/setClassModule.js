@@ -1,8 +1,12 @@
 export default function setClassList(elem) {
-    switch(elem.textContent){
-      case 'backspace':
+  switch (elem.textContent){
+    case 'backspace':
       elem.classList.add('backspace');
-      elem.innerHTML = '<i class="fas fa-backspace"></i>';
+      elem.innerHTML = '<i class="fas fa-backspace">  </i>';
+      break;
+    case 'caps':
+      elem.classList.add('capslock');
+      elem.innerHTML = '<span class="material-icons">keyboard_capslock</span>';
       break;
     case 'enter': 
       elem.classList.add('enter');
@@ -10,7 +14,7 @@ export default function setClassList(elem) {
       break;
     case 'space':
       elem.classList.add('space');
-      elem.textContent = '';
+      elem.textContent = '  ';
       break;
     case 'lang':
       elem.classList.add('lang');
