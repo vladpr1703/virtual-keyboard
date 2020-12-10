@@ -1,27 +1,42 @@
 export default function addListener() {
   document.addEventListener('click', (event) => {
     const textArea = document.querySelector('#text');
+    const condition = textArea.value.length === textArea.selectionEnd || textArea.selectionEnd === 0;
+    const cursor = textArea.selectionEnd;
     switch (event.target.className) {
       case 'key backspace':
-        if (textArea.value.length === textArea.selectionEnd || textArea.selectionEnd === 0 ) {
-          textArea.value = textArea.value.slice(0, textArea.value.length-1);
+        if (condition) {
+          textArea.value = textArea.value.slice(0, textArea.value.length - 1);
         }
-        else { textArea.value = textArea.value.slice(0, (textArea.selectionEnd - 1))  
-          + textArea.value.slice(textArea.selectionEnd, textArea.value.length);
+        else { textArea.value = textArea.value.slice(0, (cursor - 1))  
+          + textArea.value.slice(cursor, textArea.value.length);
         }
         break;
       case 'key enter':
-        textArea.value = textArea.value.slice(0, textArea.selectionEnd) + '\n' 
-        + textArea.value.slice(textArea.selectionEnd, textArea.value.length);
+        textArea.value = textArea.value.slice(0, cursor) + '\n' + textArea.value.slice(cursor, textArea.value.length);
         break;
       case 'key space':
-        textArea.value += ' ';
+        if (condition) {
+          textArea.value = textArea.value.slice(0, textArea.value.length) + ' ';
+        }
+        else { textArea.value = textArea.value.slice(0, (cursor)) + ' ' +  textArea.value.slice(cursor, textArea.value.length);
+        }
         break;
       case 'key': 
-        textArea.value += event.target.textContent;
+        if (condition) {
+          textArea.value = textArea.value.slice(0, textArea.value.length) + event.target.textContent;
+        }
+        else { textArea.value = textArea.value.slice(0, (cursor))  
+          + event.target.textContent + textArea.value.slice(cursor, textArea.value.length);
+      }
         break;
       case 'key key_caps':
-        textArea.value += event.target.textContent.toUpperCase();
+        if (condition) {
+          textArea.value = textArea.value.slice(0, textArea.value.length) + event.target.textContent.toUpperCase();
+        }
+        else { textArea.value = textArea.value.slice(0, (condition))  
+          + event.target.textContent.toUpperCase() +  textArea.value.slice(condition, textArea.value.length);
+        }
         break;
       case 'key capslock': 
         event.target.classList.add('caps_on');
