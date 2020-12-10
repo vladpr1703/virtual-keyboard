@@ -30,12 +30,3 @@ export default function addListener() {
     }
   });
 }
-
-
-// if (textArea.selectionEnd === textArea.textContent.length) {
-//   textArea.value += '\n';
-// }
-// else {
-//   textArea.value = textArea.value.slice(0, (textArea.selectionEnd))
-//   + textArea.value.slice(textArea.selectionEnd, textArea.value.length);
-// }
