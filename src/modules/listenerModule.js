@@ -7,8 +7,6 @@ export default function addListener() {
           + textArea.value.slice(textArea.selectionEnd, textArea.value.length);
         break;
       case 'key enter':
-        console.log(textArea.selectionEnd)
-        console.log(textArea.value.length)
         textArea.value = textArea.value.slice(0, textArea.selectionEnd) + '\n' 
         + textArea.value.slice(textArea.selectionEnd, textArea.value.length);
         break;
