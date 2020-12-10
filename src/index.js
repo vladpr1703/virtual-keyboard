@@ -62,7 +62,7 @@ document.addEventListener('click', (event) => {
 document.addEventListener('keydown', (event) => {
   let buttons = div.querySelectorAll('button');
   buttons = Array.prototype.slice.call(buttons);
-  if (event.code) {
+  if (keyCodes.indexOf(event.code) !== -1) {
     buttons.forEach(el => el.blur());
     const keyCodeID = keyCodes.findIndex((el) => el == event.code);
     const setStyle = function() {
