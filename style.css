@@ -1,29 +1,43 @@
 body {
     text-align: center;
+    background-color: rgb(241, 241, 213);
 }
 
 textarea {
+    width: 732px;
     font-size: 20px;
+    background-color: honeydew;
     color: black;
+    border: 2px solid grey;
+    border-bottom: none;
+    margin-bottom: -4px;
+    border-radius: 20px 20px 0 0;
+    outline: none;
 }
 
 .keyboard {
     width: 740px;
     margin: 0 auto;
     text-align: center;
+    background-color: grey;
+    border-radius: 0 0 20px 20px;
+    padding: 10px 0px 10px;
 }
 
 .language {
     width: 100px;
     height: 30px;
     margin-top: 20px;
-    background-color: cornflowerblue;
+    background-color: rgb(199, 199, 199);
+    border: 1px solid rgb(199, 199, 199);
+    border-radius: 20px;
     outline: none;
     transition: all 0.2s ease;
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
 }
 
 .language:hover {
-    border-radius: 20px;
+    transform: translateY(-5px)
 }
 
 .language:focus {
@@ -36,19 +50,19 @@ textarea {
     height: 50px;
     font: bold 20px 'Montserrat', sans-serif;
     margin: 2px 2px 2px;
-    background-color: #4595f7;
+    background-color: gainsboro;
     outline: none;
     opacity: 0.9;
 }
 
 .key:hover {
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
-    background-color: #429ef5;
+    background-color: rgb(150, 150, 150);
 }
 
 .hover {
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
-    background-color: #3a93e7;
+    background-color: rgb(150, 150, 150);
 }
 
 .backspace {

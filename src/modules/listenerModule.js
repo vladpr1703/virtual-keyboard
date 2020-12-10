@@ -3,8 +3,12 @@ export default function addListener() {
     const textArea = document.querySelector('#text');
     switch (event.target.className) {
       case 'key backspace':
-        textArea.value = textArea.value.slice(0, (textArea.selectionEnd - 1))  
+        if (textArea.value.length === textArea.selectionEnd || textArea.selectionEnd === 0 ) {
+          textArea.value = textArea.value.slice(0, textArea.value.length-1);
+        }
+        else { textArea.value = textArea.value.slice(0, (textArea.selectionEnd - 1))  
           + textArea.value.slice(textArea.selectionEnd, textArea.value.length);
+        }
         break;
       case 'key enter':
         textArea.value = textArea.value.slice(0, textArea.selectionEnd) + '\n' 
@@ -30,12 +34,3 @@ export default function addListener() {
     }
   });
 }
-
-
-// if (textArea.selectionEnd === textArea.textContent.length) {
-//   textArea.value += '\n';
-// }
-// else {
-//   textArea.value = textArea.value.slice(0, (textArea.selectionEnd))
-//   + textArea.value.slice(textArea.selectionEnd, textArea.value.length);
-// }
